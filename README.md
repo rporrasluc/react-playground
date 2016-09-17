@@ -9,3 +9,24 @@ Based in their recommendations we have downloaded the starter pack and created o
 Thanks to this small piece of code I have learnt a bit about the [JSX syntax](https://facebook.github.io/react/docs/jsx-in-depth.html) and included Babel to perform the transformation in the browser.
 
 In the first chapter we will see how React can be used together with package managers.
+
+## Package Management with Browserify
+What was supposed to be react playground is going to be a new (for me) JS tools playground. As Rails developer, I am more used to Sprockets as tool for bundling the application files up in only one file. The great advantage I can find is that defining modules you care only about what the module requires rather than having to deal with the order in which all your files are loaded to accomplish the dependencies.
+
+We have replaced the three files we were fetching from the server side for only one file called bundle.js. For doing this first we got the package manager browserify using `npm install -g browserify`. Browserify allows you to use your npm managed libraries inside your application, so we have move forward and downloaded the required npm packages.
+
+```
+npm install --save react react-dom babelify babel-preset-react
+```
+
+Finally, we have used `browserify -t [ babelify ] src/helloworld.js -o src/bundle.js` for creating the file bundle.js from the file helloworld.js. The file helloworld is in charge of specify its dependencies.
+
+```javascript
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('example')
+);
+```
