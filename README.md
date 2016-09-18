@@ -47,3 +47,28 @@ Our tutorial folder structure is the following:
         |-- css
             |-- base.css
 ```
+
+### First component
+React is all about components, the more granular component we can get, the better. In this example we will build a commnents box similar to the one offered by Disqus. The box will consist of a list of comments and a form for adding new messages.
+
+In React, granular components create bigger ones using composition. These bigger ones can create other even more bigger, etcetera. This is called [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/).
+
+In our example, we will have the **Comment** as basic unit, a **List of Comments** as a composition of messages, a **New Comments Form** and the **Comments Box** which is composed by the list of messages and the form.
+
+For learning how to create a simple React component we will create the component **CommentBox**.
+
+```
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div className="commentBox">
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
+});
+```
+
+Components are created using the method `React.createClass()`, which receive a Javascript object. The most important method that is passed is called `render`, which should return a tree of ReactComponents. You can notice the use of className when defining `<div>` element and think that it is an error, however, div is not referring to the DOM node but to a React `div` component, which accepts the property className.
+
+Returning tree of components is what makes React composable.
