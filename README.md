@@ -30,3 +30,20 @@ ReactDOM.render(
   document.getElementById('example')
 );
 ```
+
+## React Tutorial
+Following React next steps recommendations, we are going to follow the React Tutorial. React Tutorial code already provides a set of web servers written in different programming languages so you are free to choose your favourite one. In our case, we have chosen the Ruby one. We have removed all unused servers and, as stated by the tutorial, the script file that contains what will be the result of your learning work.
+
+Don't be cheater and write, not only read! :)
+
+Our tutorial folder structure is the following:
+
+```
+|-- tutorial
+    |-- comments.json
+    |-- server.rb
+    |-- public
+        |-- index.html
+        |-- css
+            |-- base.css
+```
